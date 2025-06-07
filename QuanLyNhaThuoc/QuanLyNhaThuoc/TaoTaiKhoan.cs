@@ -1,25 +1,19 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Data.SqlClient; // Add this namespace for SQL-related classes
+using System.Data.SqlClient;
 
 namespace QuanLyNhaThuoc
 {
     public partial class TaoTaiKhoan : Form
     {
+        private string connectionString = @"Data Source=SHANGPC\MSSQLSERVER1;Initial Catalog=QuanLyNhaThuoc;Integrated Security=True";
+
         public TaoTaiKhoan()
         {
             InitializeComponent();
         }
 
-        // Form đăng ký tài khoản nhân viên
-        private void butDangKy_Click(object sender, EventArgs e)
+        private void btnTao_Click_1(object sender, EventArgs e)
         {
             string tenNhanVien = txtTenNhanVien.Text.Trim();
             string taiKhoan = txtTaiKhoan.Text.Trim();
@@ -33,7 +27,6 @@ namespace QuanLyNhaThuoc
                 return;
             }
 
-            string connectionString = "Data Source=.;Initial Catalog=QuanLyNhaThuoc;Integrated Security=True";
             using (SqlConnection conn = new SqlConnection(connectionString))
             {
                 try
@@ -53,6 +46,7 @@ namespace QuanLyNhaThuoc
                     }
 
                     string query = "INSERT INTO NhanVien (TenNhanVien, TaiKhoan, MatKhau, Email) VALUES (@TenNhanVien, @TaiKhoan, @MatKhau, @Email)";
+
                     using (SqlCommand cmd = new SqlCommand(query, conn))
                     {
                         cmd.Parameters.AddWithValue("@TenNhanVien", tenNhanVien);
@@ -67,6 +61,10 @@ namespace QuanLyNhaThuoc
                             txtTaiKhoan.Clear();
                             txtMatKhau.Clear();
                             txtEmail.Clear();
+                            // Chuyển về trang đăng nhập
+                            this.Hide();
+                            DangNhap dangNhapForm = new DangNhap();
+                            dangNhapForm.Show();
                         }
                         else
                         {
@@ -79,6 +77,13 @@ namespace QuanLyNhaThuoc
                     MessageBox.Show("Lỗi: " + ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
+        }
+
+        private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            this.Hide();
+            DangNhap dangNhapForm = new DangNhap();
+            dangNhapForm.Show();
         }
     }
 }
