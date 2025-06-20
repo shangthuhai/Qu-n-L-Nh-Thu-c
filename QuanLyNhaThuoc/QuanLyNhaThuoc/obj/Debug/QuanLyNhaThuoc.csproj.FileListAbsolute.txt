@@ -10,3 +10,4 @@ C:\Users\0pham\source\repos\QuanLyNhaThuoc\QuanLyNhaThuoc\obj\Debug\QuanLyNhaThu
 C:\Users\0pham\source\repos\QuanLyNhaThuoc\QuanLyNhaThuoc\obj\Debug\QuanLyNhaThuoc.pdb
 C:\Users\0pham\source\repos\QuanLyNhaThuoc\QuanLyNhaThuoc\obj\Debug\QuanLyNhaThuoc.DangNhap.resources
 C:\Users\0pham\source\repos\QuanLyNhaThuoc\QuanLyNhaThuoc\obj\Debug\QuanLyNhaThuoc.TaoTaiKhoan.resources
+C:\Users\0pham\source\repos\QuanLyNhaThuoc\QuanLyNhaThuoc\obj\Debug\QuanLyNhaThuoc.Form2.resources

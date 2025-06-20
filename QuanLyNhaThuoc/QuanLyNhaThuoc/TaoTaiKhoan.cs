@@ -61,7 +61,7 @@ namespace QuanLyNhaThuoc
                             txtTaiKhoan.Clear();
                             txtMatKhau.Clear();
                             txtEmail.Clear();
-                            // Chuyển về trang đăng nhập
+                            
                             this.Hide();
                             DangNhap dangNhapForm = new DangNhap();
                             dangNhapForm.Show();
@@ -84,6 +84,11 @@ namespace QuanLyNhaThuoc
             this.Hide();
             DangNhap dangNhapForm = new DangNhap();
             dangNhapForm.Show();
+        }
+
+        private void tableLayoutPanel2_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }
